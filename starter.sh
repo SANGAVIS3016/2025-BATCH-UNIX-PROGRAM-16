@@ -1,11 +1,18 @@
 #!/bin/bash
 
-# UNIX PROGRAM
-# Add a group and assign users to the group.
+USERNAME="student_test"
+GROUPNAME="test_group"
 
-# Write your commands below.
+# 1. User Management Commands
+useradd "$USERNAME"
+echo "$USERNAME:Password123!" | chpasswd
 
-# Step 1: Create the group
+# 2. Group Management Commands
+groupadd "$GROUPNAME"
+usermod -aG "$GROUPNAME" "$USERNAME"
+groupdel "$GROUPNAME"
 
+# 3. Clean up user
+userdel -r "$USERNAME"
 
-# Step 2: Assign the users to the group
+echo "User and group management operations completed."
