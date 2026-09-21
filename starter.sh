@@ -1,14 +1,14 @@
 #!/bin/bash
 
-USERNAME="student_test"
-GROUPNAME="test_group"
+GROUP_NAME="developers"
+USER1="student1"
+USER2="student2"
 
-# User management commands
-sudo useradd "$USERNAME"
-echo "$USERNAME:Password123!" | sudo chpasswd
+# Create the group
+groupadd "$GROUP_NAME"
 
-# Group management commands
-sudo groupadd "$GROUPNAME"
-sudo usermod -aG "$GROUPNAME" "$USERNAME"
+# Add both users to the group
+usermod -aG "$GROUP_NAME" "$USER1"
+usermod -aG "$GROUP_NAME" "$USER2"
 
 echo "User and group management operations completed."
