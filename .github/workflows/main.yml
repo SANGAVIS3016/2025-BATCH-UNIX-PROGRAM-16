@@ -1,8 +1,12 @@
-name: Autograding
+name: Test starter.sh
 
 on:
   push:
-  workflow_dispatch:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
